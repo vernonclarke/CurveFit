@@ -145,7 +145,8 @@ $$
 $$
 
 
-where     
+where 
+
 $$
 \boldsymbol{ \tau_{rise} = \tau_1 \tau_2 / (\tau_1 + \tau_2) }
 $$
@@ -293,6 +294,7 @@ $$
 $$
 
 similarly in terms of $\tau_1$ and $\tau_2$: 
+
 $$
 \boldsymbol{ f = {\left( \left( \frac{\tau_1}{\tau_1+\tau_2} \right)^{\frac{\tau_1}{\tau_2}} \right) \frac{\tau_2}{\tau_1+\tau_2}} }
 $$
@@ -312,6 +314,10 @@ $$
 $$
 
 Solve this integral:
+
+$$
+\int_{0}^{\infty} A \left(e^{- \frac{t}{\tau_{\text{decay}}}} - e^{- \frac{t}{\tau_{\text{rise}}}}\right)\, dt = A \left(- \tau_{\text{decay}} e^{- \frac{t}{\tau_{\text{decay}}}} + \tau_{\text{rise}} e^{- \frac{t}{\tau_{\text{rise}}}}\right)
+$$
 
 $$ 
 \text{Area} & = \int_{0}^{\infty} A(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}}) \,dt \\
