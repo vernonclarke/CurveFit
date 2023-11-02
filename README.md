@@ -126,8 +126,11 @@ Python is usually pre-installed on Linux. If you need to install or update it, u
    
 
 ## Setting up Jupyter Notebook with Anaconda/Miniconda
+
 **An alternative to the above is to use Anaconda or Miniconda**
+
 Anaconda and Miniconda are Python distributions that include the Python interpreter along with a suite of other tools and libraries. These can be particularly useful for scientific computing, data analysis, and machine learning projects.
+
 Even if Python is already installed, you may prefer to use Anaconda/Miniconda.
 
 - **Anaconda**: Download the installer from the [Anaconda website](https://www.anaconda.com/products/individual).
@@ -136,8 +139,6 @@ Even if Python is already installed, you may prefer to use Anaconda/Miniconda.
 Run the downloaded installer and follow the instructions to set up your Python environment.
 
 # <center>Instructions for setting up and running Jupyter Notebook with Anaconda/Mininconda</center>
-
-## Assumes prior installation of Anaconda/Miniconda
 
 ### create 'fitting' environment <span style="font-size: 80%;">(do once to set up)</span>:
 
