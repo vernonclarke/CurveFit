@@ -1,4 +1,4 @@
-# PSP_fitting
+# PSP fitting
 
 # <center>Instructions for setting up and running Jupyter Notebook</center>
 ### Create 'fitting' environment <span style="font-size: 80%;">(do once to set up)</span>:
