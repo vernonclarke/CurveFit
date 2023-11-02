@@ -190,7 +190,6 @@ $$
 
 ### alpha function:
 
-
 $$
 y = A t e^{-t/\tau} 
 $$
@@ -233,7 +232,7 @@ $$
 \frac{dy}{dt} = A \left( \frac{e^{-t/\tau_{rise}}}{\tau_{rise}} - \frac{e^{-t/\tau_{decay}}}{\tau_{decay}} \right) 
 $$
 
-The time of the peak of the response $t = t_{peak}$ can be found by solving $ \frac{dy}{dt} = 0 $:
+The time of the peak of the response $t = t_{peak}$ can be found by solving $\frac{dy}{dt} = 0$:
 
 $$
 0 = A \left( \frac{e^{-t_{peak}/\tau_{rise}}}{\tau_{rise}} - \frac{e^{-t_{peak}/\tau_{decay}}}{\tau_{decay}} \right)
@@ -310,14 +309,13 @@ $$
 Integrate the function with respect to t then calculate the integral of y from 0 to $\infty$ (i.e. the area under the curve):
 
 $$ 
-\text{Area} = \int_{0}^{\infty} A(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}}) \,dt 
+\text{Area} = \int_{0}^{\infty} A(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}})dt 
 $$
 
 Solve this integral:
-Solve this integral:
 
 $$
-\text{Area} = \int_{0}^{\infty} A(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}}) \,dt = A \left[ -\tau_{decay} e^{-t/\tau_{decay}} + \tau_{rise} e^{-t/\tau_{rise}} \right]_0^{\infty} 
+\text{Area} = \int_{0}^{\infty} A(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}})dt = A \left[ -\tau_{decay} e^{-t/\tau_{decay}} + \tau_{rise} e^{-t/\tau_{rise}} \right]_0^{\infty} 
 $$   
 
 $$
@@ -329,8 +327,6 @@ Area under the curve is given by
 $$ 
 \boldsymbol{ \text{Area} = A (\tau_{decay} - \tau_{rise}) = \frac{A_{peak}}{f} (\tau_{decay} - \tau_{rise}) }
 $$
-
-
 
 Similarly, in terms of $\tau_1$ and $\tau_2$:
 
@@ -429,13 +425,13 @@ $$
 Integrate the function with respect to t then calculate the integral of y from 0 to $\infty$ (i.e. the area under the curve):
 
 $$ 
-\text{Area} = \int_{0}^{\infty} A t e^{-t/\tau}  \,dt 
+\text{Area} = \int_{0}^{\infty} A t e^{-t/\tau} dt 
 $$
 
 Solve this integral:
 
 $$
-\lim_{T \to \infty} \int_{0}^{T} Ate^{-t/\tau} \,dt = \lim_{T \to \infty} \left[ -A\tau e^{-t/\tau}(t+\tau) \right]_0^T 
+\lim_{T \to \infty} \int_{0}^{T} Ate^{-t/\tau} dt = \lim_{T \to \infty} \left[ -A\tau e^{-t/\tau}(t+\tau) \right]_0^T 
 $$ 
 
 $$ 
@@ -505,8 +501,8 @@ likewise if $p_1 = 0.9$ and $p_2 = 0.1$ then $t_2$ - $t_1$ gives the 90 - 10 % d
     
 4. **output:**
     - Initial approximate starting values from step 2
-    - Fit in form ['A1', 'τ1', 'τ2', 'A2', 'τ3', 'τ4', 'σ']; act as starting values for MLE fit; accurate as 'least squares' or 'differential evolution' curve fits
-    - Fits ['peak1', 'τrise1', 'τdecay2', 'peak2', 'τrise2', 'τdecay2']
+    - Fit in form [ $A_1$, $\tau_1$, $\tau_2$, $A_2$, $\tau_3$, $\tau_4$, $\sigma$ ]; act as starting values for MLE fit; accurate as 'least squares' or 'differential evolution' curve fits
+    - Fits [ $A_{peak_1}$, $\tau_{rise_1}$, $\tau_{decay_1}$, $A_{peak_2}$, $\tau_{rise_2}$, $\tau_{decay_2}$ ]
     - Model information criterion if chosen
 
 ## <center>Maximum Likelihood Estimation (MLE)<center>
@@ -518,10 +514,10 @@ Maximum Likelihood Estimation (MLE) is a statistical method used for estimating 
 
 #### 2. **Likelihood Function:**
    - The likelihood function is defined as the probability of observing the given data as a function of the parameters of the model. 
-   - Mathematically, it can be written as $ L(\theta | X) $, where $ \theta $ represents the parameters, and $ X $ represents the data.
+   - Mathematically, it can be written as $L(\theta | X)$, where $\theta$ represents the parameters, and $X$ represents the data.
 
 #### 3. **Maximization:**
-   - Find the values of the parameters that maximize this likelihood function. In other words, find the values of $ \theta $ that make the observed data most probable.
+   - Find the values of the parameters that maximize this likelihood function. In other words, find the values of $\theta$ that make the observed data most probable.
 
 #### 4. **Log-Likelihood:**
    - Often, it is mathematically easier to work with the natural logarithm of the likelihood function, known as the log-likelihood. 
@@ -533,7 +529,7 @@ Maximum Likelihood Estimation (MLE) is a statistical method used for estimating 
 
 ### Example:
 
-Consider a sample of data $ X = \{x_1, x_2, ..., x_n\} $ from a normal distribution with unknown mean $ \mu $ and known variance $ \sigma^2 $. The likelihood function is given by:
+Consider a sample of data $X = {x_1, x_2, ..., x_n}$ from a normal distribution with unknown mean $\mu$ and known variance $\sigma^2$. The likelihood function is given by:
 
 $$
 L(\mu | X) = \prod_{i=1}^{n} \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{(x_i - \mu)^2}{2\sigma^2}\right)
@@ -597,7 +593,7 @@ BIC and AIC have advantages in model comparison, penalization of complexity, and
    
    **Outputs:**
     - `x`: i.e. time
-    - `df`: i.e. a dataframe contains processed traces; baseline is removed and traces are relative to baseline if baseline = True. If input file is negative going, output is positive (to simplify fitting routines). If the absolute maximum values have different signs then function returns an error (i.e. the assumption is all responses are either negative or positive going)
+    - `df`: i.e. a dataframe that contains the processed traces: baseline is removed and traces are relative to baseline if baseline = True. If input file is negative going, output is positive (to simplify fitting routines). If the absolute maximum values of different traces have different signs then function returns an error (i.e. the assumption is all responses are either negative or positive going)
 
 
 2. **Analyse one trace using function `FITproduct2`**
@@ -621,16 +617,16 @@ BIC and AIC have advantages in model comparison, penalization of complexity, and
     - `y`: array represents response obtained from df above; for nth column in df y = df.iloc[:, n-1].values
     - `criterion`: defaults to None, If criterion = 'BIC' or 'AIC' then returns Bayesian Information Criterion (BIC) or Akaike Information Criterion (AIC), respectively. In a similar manner to the sum of the squares of the residuals ('sum of squares'), lower values indicate a better fit. Has the advantage over 'sum of squares' that it can be used to compare fits that arise from models with different numbers of fitted parameters (e.g. one or sum of two product fits)
     - `plot`: if True (default) then returns a plot showing original response in grey with fits superimposed 
-    - `initial_guess`: defaults to None. If None then function should calculate appropriate starting values; if provided, only useful if start_method='LS'. Use in form initial_guess=[70,3,7,70,6,100] where values are estimates for ['A1', 'τ1', 'τ2', 'A2', 'τ3', 'τ4']. In general the solution is usually better if set to None.
+    - `initial_guess`: defaults to None. If None then function should calculate appropriate starting values; if provided, only useful if start_method='LS'. Use in form initial_guess=[70, 3, 7, 70, 6, 100] where values are estimates for [ $A_1$, $\tau_1$, $\tau_2$, $A_2$, $\tau_3$, $\tau_4$ ]. In general the solution is usually better if set to None.
     - `start_method`: can be set to 'LS' for least squares. This option can be further altered by changing p0_algorithm. Other options are 'DE' for differential evolution and None. If None then takes initial random starting values and does 'MLE' without the intermediate step to refine the starting values. The latter can be considered a pure MLE method whereas setting start_method to either 'LS' or 'DE' is a hybrid. Obviously, if do not want MLE, this function also provides the (start) values obtained for this fitting provided start_method is either 'LS' or 'DE'. 
     - `percent`: default set to 80%. If start_method='DE' or 'LS' + initial_guess = None then if percent = 80, function calculates 'rough' initial starting values based on the amplitude and the 20-80% rise and 80-20% decay times. These are then fed into a separate function to calculate 'good' starting values using 'LS' or "DE' curve fitting.
     - `dp`: number of decimal results are returned to; default is 3
     - `maxfev`: default is 100000; maximum number of iterations that the algorithm should run to try and find the parameter values that minimize the difference between the predicted and actual values (i.e., that best fits the data)
     - `p0_algorithm`: by default set to 'trf'. When using least_squares to get starting values (i.e. start_method='LS'), least_squares will use the Trust Region Reflective algorithm, which is a derivative-free algorithm designed for solving nonlinear least squares problems. This algorithm combines the trust region method with a reflective strategy to handle both bound and unbound constraints on the variables. Other options include 'lm' and 'dogbox'
-    - `cv`: the cv or coefficient of variation is defined as the ratio of the standard deviation ($\sigma$) to the mean ($\mu$). The initial estimate for the starting values is based on response amplitude, 20-80% rise and 80-20% decay times. These values are used to create a lognormal distribution of starting values $ \sigma = \sqrt{ \log(1 + (\text{cv}^2)) } $ and $ \mu = \log(x) - 0.5\sigma^2 $ where x is the parameter being randomized. A lognormal distribution was chosen because it ensures starting values cannot be negative. 
+    - `cv`: the cv or coefficient of variation is defined as the ratio of the standard deviation ($\sigma$) to the mean ($\mu$). The initial estimate for the starting values is based on response amplitude, 20-80% rise and 80-20% decay times. These values are used to create a lognormal distribution of starting values $\sigma = \sqrt{ \log(1 + (\text{cv}^2)) }$ and $\mu = \log(x) - 0.5\sigma^2$ where x is the parameter being randomized. A lognormal distribution was chosen because it ensures starting values cannot be negative. 
     - `N`: by default set to 30. N is the number of randomized starting values that are used to initialize the fits. if N > 1 then the function will compare solutions to determine the fit with minimised sum of squares. The greater N, then the higher the probability that the presented solution represents the best solution and not just a local minimum. With randomized starting values, the optimization algorithm may find different local minima in different runs. Setting N in the range 10 to 30 represents a good comprise between finding the best fit and function efficiency.
     - `slow_rise_contraint`:  default is True. If True then MLE rejects any solutions with underlying fits can comprise the fastest rise combined with the slowest decay and vice versa. If True then guarantees the 'fast' fittted response will have the faster rise AND decay and the slow component the slower rise AND decay
-    - `rise`: The function is designed to return time constants related to exponential rise and decay (either as $ {\tau}rise $ and ${\tau}decay$ or ${\tau}1$ and ${\tau}2$; nb ${\tau}decay = {\tau}2)$. Neither $ {\tau}rise $ or ${\tau}1$ truly define rise time and both require careful interpretation. As an alternative, the function will also return the % rise and decay times. Default setting is $\text{rise} = [0.2, 0.8]$ which will determine the 20 - 80% rise time.
+    - `rise`: The function is designed to return time constants related to exponential rise and decay (either as ${\tau}rise$ and ${\tau}decay$ or ${\tau}1$ and ${\tau}2$; nb ${\tau}decay = {\tau}2)$. Neither ${\tau}rise $ or ${\tau}1$ truly define rise time and both require careful interpretation. As an alternative, the function will also return the % rise and decay times. Default setting is $\text{rise} = [0.2, 0.8]$ which will determine the 20 - 80% rise time.
     - `decay`: Similarly to rise above, the default for this input is $\text{default} = [0.8, 0.2]$ which returns the 80 - 20 % decay time
     - `kinetics`: Default for kinetics is 'solve'. If using 'solve', the function solves an equation iteratively to determine rise, decay time constants;  area under the fit is calculated using the exact form of the equation given above. In practice, calculating rise and decay uses 'fsolve' from 'scipy.optimize' a numerical root-finding algorithm with estimated starting values. If set to 'fit', the function determines rise, decay and area from the underlying fits. If one fit is especially slow, 'solve' method will be more accurate. The 'fit' method is limited by the time axis (i.e. if response hasn't decayed sufficiently to 20% of peak then 80-20% decay cannot be determined and, instead' the time from 80% peak to the end is returned. 
 
