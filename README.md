@@ -314,20 +314,15 @@ $$
 $$
 
 Solve this integral:
+Solve this integral:
 
 $$
-\int_{0}^{\infty} A \left(e^{- \frac{t}{\tau_{\text{decay}}}} - e^{- \frac{t}{\tau_{\text{rise}}}}\right)\, dt = A \left(- \tau_{\text{decay}} e^{- \frac{t}{\tau_{\text{decay}}}} + \tau_{\text{rise}} e^{- \frac{t}{\tau_{\text{rise}}}}\right)
-$$
+\text{Area} = \int_{0}^{\infty} A(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}}) \,dt = A \left[ -\tau_{decay} e^{-t/\tau_{decay}} + \tau_{rise} e^{-t/\tau_{rise}} \right]_0^{\infty} 
+$$   
 
-$$ 
-\text{Area} & = \int_{0}^{\infty} A(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}}) \,dt \\
-\\
-& = A \left[ -\tau_{decay} e^{-t/\tau_{decay}} + \tau_{rise} e^{-t/\tau_{rise}} \right]_0^{\infty} \\
-\\
-& = A \left[ 0 - (-\tau_{decay} + \tau_{rise}) \right] \\
-\\
-& = A (\tau_{decay} - \tau_{rise}) 
 $$
+= A (\tau_{decay} - \tau_{rise}) 
+$$    
 
 Area under the curve is given by
 
