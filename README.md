@@ -1,6 +1,9 @@
 -----------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------
 # <center>PSP fitting</center>
+#### This is a work in progress
+
+vernon.clarke@northwestern.edu
 
 ## Instructions for setting up and running Jupyter Notebook
 
@@ -9,9 +12,9 @@
 To determine if Python is installed on your system and to check its version, follow these steps:
 
 1. **Open your Terminal**:
-   - On Windows: Search for Command Prompt or PowerShell in the start menu.
-   - On MacOS: Press `Cmd + Space` to open Spotlight Search and type "Terminal".
-   - On Linux: Search for Terminal in your applications menu or press `Ctrl + Alt + T`.
+   - On Windows: Search for command prompt or PowerShell in the start menu.
+   - On MacOS: Press `cmd + cpace` to open spotlight search and type 'terminal'.
+   - On Linux: Search for terminal in your applications menu or press `ctrl + alt + T`.
 
 2. **Check Python version**:
    ```bash
