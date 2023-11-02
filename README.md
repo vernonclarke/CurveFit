@@ -1,9 +1,10 @@
-# PSP fitting
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+# <center>PSP fitting</center>
 
+## Instructions for setting up and running Jupyter Notebook
 
-# <center>Instructions for setting up and running Jupyter Notebook</center>
-
-## Check if Python is Installed
+## A. Check if Python is Installed
 
 To determine if Python is installed on your system and to check its version, follow these steps:
 
@@ -54,7 +55,7 @@ Python is usually pre-installed on Linux. If you need to install or update it, u
     sudo pacman -S python3
     ```
 
-## Setting up Jupyter Notebook without Anaconda/Miniconda
+## B1. Setting up Jupyter Notebook without Anaconda/Miniconda
 
 #### In this example a directory called Juypter (this can be named whatever you like) has been created within the documents folder
 
@@ -125,7 +126,7 @@ Python is usually pre-installed on Linux. If you need to install or update it, u
 6. **Close the terminal window/tab**
    
 
-## Setting up Jupyter Notebook with Anaconda/Miniconda
+## B2. Setting up Jupyter Notebook with Anaconda/Miniconda
 
 **An alternative to the above is to use Anaconda or Miniconda**
 
@@ -138,7 +139,6 @@ Even if Python is already installed, you may prefer to use Anaconda/Miniconda.
 
 Run the downloaded installer and follow the instructions to set up your Python environment.
 
-# <center>Instructions for setting up and running Jupyter Notebook with Anaconda/Mininconda</center>
 
 ### create 'fitting' environment <span style="font-size: 80%;">(do once to set up)</span>:
 
@@ -195,8 +195,8 @@ Run the downloaded installer and follow the instructions to set up your Python e
 
 5. **Close the terminal window/tab**
 
-
-
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
 ## <center>These routines are designed to provide fits for product and alpha functions</center>
 
 
