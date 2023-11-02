@@ -57,7 +57,7 @@ Python is usually pre-installed on Linux. If you need to install or update it, u
 
 ## B1. Setting up Jupyter Notebook without Anaconda/Miniconda
 
-#### In this example a directory called Juypter (this can be named whatever you like) has been created within the documents folder
+#### In this example a directory called Jupyter (this can be named whatever you like) has been created within the documents folder
 
 ### Create 'fitting' environment <span style="font-size: 80%;">(do once to set up)</span>:
 
