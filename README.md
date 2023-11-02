@@ -1,7 +1,63 @@
 # PSP fitting
 
+
 # <center>Instructions for setting up and running Jupyter Notebook</center>
-#### In this example a directory called Juypter has been created within the documents folder
+
+## Check if Python is Installed
+
+To determine if Python is installed on your system and to check its version, follow these steps:
+
+1. **Open your Terminal**:
+   - On Windows: Search for Command Prompt or PowerShell in the start menu.
+   - On MacOS: Press `Cmd + Space` to open Spotlight Search and type "Terminal".
+   - On Linux: Search for Terminal in your applications menu or press `Ctrl + Alt + T`.
+
+2. **Check Python version**:
+   ```bash
+   python --version
+   ```
+
+If Python is installed, the version number will be displayed
+
+## Install Python (if not already installed)
+
+Follow these instructions based on your operating system:
+
+### On Windows
+
+- **Download Python**: Navigate to the [official Python website](https://python.org) and download the latest version for Windows.
+- **Install Python**: Open the downloaded installer. Ensure you select the "Add Python to PATH" option during installation for easier command-line access.
+
+### On MacOS
+
+- **Download Python**: Visit the [official Python website](https://python.org) to download Python for MacOS.
+- Alternatively, use **Homebrew** to install Python by opening Terminal and running:
+    ```bash
+    brew install python3
+    ```
+
+### On Linux
+
+Python is usually pre-installed on Linux. If you need to install or update it, use the package manager for your distribution:
+
+- **On Ubuntu** (and Debian-based systems):
+    ```bash
+    sudo apt update
+    sudo apt install python3
+    ```
+- **On Fedora** (and RHEL-based systems):
+    ```bash
+    sudo dnf install python3
+    ```
+- **On Arch Linux**:
+    ```bash
+    sudo pacman -S python3
+    ```
+
+## Setting up Jupyter Notebook without Anaconda/Miniconda
+
+#### In this example a directory called Juypter (this can be named whatever you like) has been created within the documents folder
+
 ### Create 'fitting' environment <span style="font-size: 80%;">(do once to set up)</span>:
 
 1. **Open Terminal**
@@ -40,7 +96,7 @@
     
 7. **Close the terminal window/tab**
 
-### To Run:
+### To Run  <span style="font-size: 80%;">(do this every time you want to run the code)</span>:
 
 1. **Open terminal**
 
@@ -67,11 +123,21 @@
     ```
 
 6. **Close the terminal window/tab**
+   
 
+## Setting up Jupyter Notebook with Anaconda/Miniconda
+**An alternative to the above is to use Anaconda or Miniconda**
+Anaconda and Miniconda are Python distributions that include the Python interpreter along with a suite of other tools and libraries. These can be particularly useful for scientific computing, data analysis, and machine learning projects.
+Even if Python is already installed, you may prefer to use Anaconda/Miniconda.
 
-# <center>Instructions for setting up and running Jupyter Notebook with ANACONDA</center>
+- **Anaconda**: Download the installer from the [Anaconda website](https://www.anaconda.com/products/individual).
+- **Miniconda**: Download the installer from the [Miniconda website](https://docs.conda.io/en/latest/miniconda.html).
 
-## Assumes prior installation of ANACONDA/MINICONDA
+Run the downloaded installer and follow the instructions to set up your Python environment.
+
+# <center>Instructions for setting up and running Jupyter Notebook with Anaconda/Mininconda</center>
+
+## Assumes prior installation of Anaconda/Miniconda
 
 ### create 'fitting' environment <span style="font-size: 80%;">(do once to set up)</span>:
 
