@@ -169,9 +169,11 @@ y = A_1  (e^{-t/\tau_{decay1}} - e^{-t/\tau_{rise1}}) + A_2  (e^{-t/\tau_{decay2
 $$
 
 where     
+
 $$
 \tau_{rise1} = \frac{\tau_1 \tau_2}{\tau_1 + \tau_2} 
 $$
+
 $$
 \tau_{rise2} = \frac{\tau_3 \tau_4}{\tau_3 + \tau_4}
 $$
@@ -179,7 +181,9 @@ $$
 $$
 \tau_{decay1} = \tau_2 
 $$
-$$\tau_{decay2} = \tau_4
+
+$$
+\tau_{decay2} = \tau_4
 $$
 
 
@@ -310,7 +314,6 @@ $$
 Solve this integral:
 
 $$ 
-\begin{aligned} 
 \text{Area} & = \int_{0}^{\infty} A(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}}) \,dt \\
 \\
 & = A \left[ -\tau_{decay} e^{-t/\tau_{decay}} + \tau_{rise} e^{-t/\tau_{rise}} \right]_0^{\infty} \\
@@ -318,7 +321,6 @@ $$
 & = A \left[ 0 - (-\tau_{decay} + \tau_{rise}) \right] \\
 \\
 & = A (\tau_{decay} - \tau_{rise}) 
-\end{aligned}
 $$
 
 Area under the curve is given by
