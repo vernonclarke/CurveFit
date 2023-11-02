@@ -1,6 +1,7 @@
 # PSP fitting
 
 # <center>Instructions for setting up and running Jupyter Notebook</center>
+### in this example a directory called Juypter has been created within the documents folder
 ### Create 'fitting' environment <span style="font-size: 80%;">(do once to set up)</span>:
 
 1. **Open Terminal**
@@ -36,7 +37,7 @@
     deactivate
     exit
     ```
-
+    
 7. **Close the terminal window/tab**
 
 ### To Run:
