@@ -61,7 +61,7 @@ Python is usually pre-installed on Linux. If you need to install or update it, u
     ```bash
     sudo dnf install python3
     ```
-- **On Arch Linux**:
+- **On Linux**:
     ```bash
     sudo pacman -S python3
     ```
