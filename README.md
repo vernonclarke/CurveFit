@@ -487,7 +487,7 @@ $$
 \boldsymbol{ A_{peak} = A \tau e^{-1} }
 $$
 
-Substituting for $A = \frac{A_{peak}} {\tau} e$ in original equation gives an often used form of the alpha function 
+Substituting for $A = \frac{A_{peak}} {\tau} e^{-t/\tau}$ in original equation gives an often used form of the alpha function 
 
 $$
 \boldsymbol{ y = A_{peak} \frac{t}{\tau} e^{1-t/\tau} }
