@@ -649,9 +649,8 @@ $$
    - **Sum of Squares:** Primarily used in the context of regression and analysis of variance.
 
 ### **Summary:**
-BIC and AIC have advantages in model comparison, penalization of complexity, and estimation of information loss, making them more suitable for model selection than using the 'sum of squares'
-
-### Using the code:
+BIC and AIC have advantages in model comparison, penalization of complexity, and estimation of information loss, making them more suitable for model selection than using the 'sum of squares'.
+The lowest AIC (or BIC) represents the model that best fits the data. When comparing fits obtained for the same model, the methods are equivalent. 
 #### step by step guide
 
 1. **Load data using function `load_data`**
