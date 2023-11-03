@@ -7,11 +7,11 @@ vernon.clarke@northwestern.edu
 
 ## Instructions for setting up and running Jupyter Notebook
 
-**I am recommending the Anaconda method for running Jupyter Notebook**. 
+**I am recommending the Anaconda/Miniconda method for running Jupyter Notebook**. 
 
 On my machine (iOS Sonoma, M2 pro), there is a massive speed advantage to running the code in the conda environment.
 The package versions seem the same so there is presumably a big difference in the underlying optimization. 
-Since conda was designed with data science libraries libraries in mind,the fact that conda packages are often more optimized than pip for scientific computing is probably to be expected. 
+since conda was designed with data science libraries libraries in mind,the fact that conda packages are often more optimized than pip for scientific computing, reduced execution is expected. 
 Conda has MKL (Math Kernel Library) optimized packages for many scientific libraries like NumPy, SciPy, etc., 
 which can significantly improve performance for certain operations. If you wish to follow this advice then skip straight to B2
 
