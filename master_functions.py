@@ -1523,7 +1523,7 @@ def LS_p0(x, y, method='alpha', initial_guess=None, maxfev=10000, percent=80, al
     output = []
     if algorithm == 'trf':
         for ii in range(N):
-                res = least_squares(residuals, x0=initial[ii], loss="linear", args=(x, y, func), bounds=bounds[ii], gtol=None, method='trf', max_nfev=maxfev)
+                res = least_squares(residuals, x0=initial[ii], loss="linear", args=(x, y, func), bounds=bounds[ii], gtol=1e-8, method='trf', max_nfev=maxfev)
                 output.append(res["x"])
     elif algorithm == 'lm':
         for ii in range(N):
@@ -2086,7 +2086,7 @@ def product_conversion_df(df, dp=3):
         for col_slice in columns_slices:
             # Unpack the column slice tuple into start and end
             start_col, end_col = col_slice
-            values = df.iloc[row, start_col:end_col]
+            values = [df.iloc[row, col] for col in range(start_col, end_col)]
             # Apply the product_conversion and round the results
             result = product_conversion(values)
             result = [round(val, dp) for val in result]  # Round each value in the result
