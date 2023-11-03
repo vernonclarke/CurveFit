@@ -69,7 +69,7 @@ from plotly.offline import init_notebook_mode
 from master_functions import *
 ```
 
-### In this example, 4 responses with different characteristics are generated. The example is provided <span style="font-size: 80%;">(there is no need to repeat steps 1-8 detailed here)</span>:
+### In this example, 4 responses with different characteristics are generated. This example is already provided in the 'example data' directory <span style="font-size: 80%;">(there is no need to repeat steps 1-8 detailed here)</span>:
 
 1. **setting up:**
 ```python
