@@ -3,6 +3,8 @@
 # <center>CurveFit</center>
 #### This is a work in progress
 
+These functions are designed to fit electrophysiological responses (either postsynaptic potentials or currents).
+
 vernon.clarke@northwestern.edu
 
 ## Instructions for setting up and running Jupyter Notebook
