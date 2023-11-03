@@ -9,7 +9,7 @@ vernon.clarke@northwestern.edu
 
 **I am recommending the Anaconda/Miniconda method for running Jupyter Notebook**. 
 
-On my machine (iOS Sonoma, M2 pro), there is a massive speed advantage to running the code in the conda environment.
+On my machine (iOS Sonoma, M2 pro), there is a massive speed advantage in running this code in the conda environment.
 The package versions seem the same so there is presumably a big difference in the underlying optimization. 
 Since conda was designed with data science libraries libraries in mind,the fact that conda packages are often more optimized than pip for scientific computing, reduced execution is expected. 
 Conda has MKL (Math Kernel Library) optimized packages for many scientific libraries like NumPy, SciPy, etc., 
@@ -469,7 +469,7 @@ $$
 \frac{dy}{dt} = A \left(1 - \frac{t}{\tau} \right) e^{-t/\tau} 
 $$
 
-The time of the peak of the response $t = t_{peak}$ can be found by solving $ \frac{dy}{dt} = 0 $:
+The time of the peak of the response $t = t_{peak}$ can be found by solving $\frac{dy}{dt} = 0$:
 
 $$
 0 = A \left(1 - \frac{t}{\tau} \right) e^{-t/\tau} 
@@ -487,7 +487,7 @@ $$
 \boldsymbol{ A_{peak} = A \tau e^{-1} }
 $$
 
-Substituting for $A = \frac{A_{peak}} {\tau} e$ in original equation gives an often used form of the alpha function 
+Substituting for $A = \frac{A_{peak}} {\tau} e^1$ in original equation gives an often used form of the alpha function 
 
 $$
 \boldsymbol{ y = A_{peak} \frac{t}{\tau} e^{1-t/\tau} }
