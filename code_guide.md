@@ -34,8 +34,13 @@ Either:
 
 4. **Navigate to your_directory in Jupyter Notebook**
 
+ 
 
-### run this to import all necessary functions:
+### The following code is contained in the Jupyter Notebook 'CurveFit_example.ipynb'
+
+
+
+### Run this to import all necessary functions:
 ```python
 import os
 from os import walk
@@ -64,7 +69,7 @@ from plotly.offline import init_notebook_mode
 from master_functions import *
 ```
 
-### As an example, 4 responses with different characteristics were generated. The example is provided <span style="font-size: 80%;">(there is no need to repeat steps 1-8 detailed here)</span>:
+### In this example, 4 responses with different characteristics are generated. The example is provided <span style="font-size: 80%;">(there is no need to repeat steps 1-8 detailed here)</span>:
 
 1. **setting up:**
 ```python
