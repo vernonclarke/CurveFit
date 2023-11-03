@@ -1,12 +1,14 @@
 # <center>Code guide</center>
 
 Follow instructions to open Jupyter Notebook
-(assumes correct installation of Anaconda and fitting' environment; see README)
+
+This assumes correct installation of Anaconda and 'fitting' environment; see README
 
 ### To run:
 
 Either:
-**A. using Terminal:**
+
+### A. using Terminal:
 
 1. **Open Terminal**
 
@@ -22,24 +24,15 @@ Either:
     jupyter notebook
     ```
 
-4. **Exit Jupyter Notebook when finished**
-    ```bash
-    ctrl+C
-    ```
-
-5. **Close the terminal window/tab**
-
-**B. using Anaconda Navigator:**
+### B. using Anaconda Navigator:
 
 1. **Open Anaconda Navigator**
 
 2. **Select 'Environments' on left menu**
 
-3. **Select 'fitting'**
+3. **Select 'fitting' and press play; choose 'open with Jupyter Notebook'**
 
-4. **Press play and choose 'open with Jupyter Notebook'**
-
-5. **Navigate to your_directory in Jupyter Notebook**
+4. **Navigate to your_directory in Jupyter Notebook**
 
 
 ### run this to import all necessary functions:
