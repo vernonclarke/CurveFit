@@ -120,7 +120,7 @@ FITproduct2(x, y)
 ```python
 # set a seed
 np.random.seed(7)
-results = FITproduct2_batch(x, y)
+results = FITproduct2_batch(x, df)
 # to view the results:
 results[0]
 # also returns results as per the original method:
@@ -136,4 +136,69 @@ np.random.seed(7)
 FITproduct2_widget(x, y)
 ```
 
+### Analysing real data
+**Example1**
+1. **load data stored as csv file:**
+```python
+x, df = load_data(folder='example data', filename='ChAT-Cre X D2EGFP(iSPN)-voltage clamp.csv', stim_time=322.5, baseline=True, time=True)
+```
+2. **analyse individual traces:**
+```python
+y = df.iloc[:, 0].values
+# set a seed
+np.random.seed(7)
+FITproduct2(x, y)
+```
+
+3. **analyse individual traces using widget:**
+```python
+# set a seed
+y = df.iloc[:, 0].values
+np.random.seed(7)
+FITproduct2_widget(x, y)
+```
+
+4. **batch fitting sum of 2 product functions to all traces:**
+```python
+# set a seed
+np.random.seed(7)
+results = FITproduct2_batch(x, df)
+# to view the results:
+results[0]
+# also returns results as per the original method:
+results[2]
+# results[2] is an alternative form of the results[0]; results[2] can be converted to a (shortened) form of results[0] using:
+product_conversion_df(results[2])
+# nb. slight differences in areas are due to rounding errors
+```
+
+**Example2**
+1. **load data stored as xlsx file:**
+```python
+x, df = load_data(folder='example data', filename='data4_TPR.xlsx', stim_time=1349, baseline=True, time=True)
+```
+
+2. **batch fitting sum of 2 product functions to all traces:**
+```python
+# set a seed
+np.random.seed(7)
+results = FITproduct2_batch(x, df)
+# to view the results:
+results[0]
+```
+
+**Example3**
+1. **load data stored as xlsx file:**
+```python
+x, df = load_data(folder='example data', filename='data5_TPR.xlsx', stim_time=1349, baseline=True, time=True)
+```
+
+2. **batch fitting sum of 2 product functions to all traces:**
+```python
+# set a seed
+np.random.seed(7)
+results = FITproduct2_batch(x, df)
+# to view the results:
+results[0]
+```
 
