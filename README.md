@@ -9,7 +9,7 @@ vernon.clarke@northwestern.edu
 
 **I am recommending the Anaconda/Miniconda method for running Jupyter Notebook**. 
 
-On my machine (iOS Sonoma, M2 pro), there is a massive speed advantage to running the code in the conda environment.
+On my machine (iOS Sonoma, M2 pro), there is a massive speed advantage in running this code in the conda environment.
 The package versions seem the same so there is presumably a big difference in the underlying optimization. 
 Since conda was designed with data science libraries libraries in mind,the fact that conda packages are often more optimized than pip for scientific computing, reduced execution is expected. 
 Conda has MKL (Math Kernel Library) optimized packages for many scientific libraries like NumPy, SciPy, etc., 
