@@ -469,7 +469,7 @@ $$
 \frac{dy}{dt} = A \left(1 - \frac{t}{\tau} \right) e^{-t/\tau} 
 $$
 
-The time of the peak of the response $t = t_{peak}$ can be found by solving $ \frac{dy}{dt} = 0 $:
+The time of the peak of the response $t = t_{peak}$ can be found by solving $\frac{dy}{dt} = 0$:
 
 $$
 0 = A \left(1 - \frac{t}{\tau} \right) e^{-t/\tau} 
