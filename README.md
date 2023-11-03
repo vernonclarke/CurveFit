@@ -143,7 +143,7 @@ Python is usually pre-installed on Linux. If you need to install or update it, u
 
 **An alternative to the above is to use Anaconda or Miniconda**
 
-Anaconda and Miniconda are Python distributions that include the Python interpreter along with a suite of other tools and libraries. These can be particularly useful for scientific computing, data analysis, and machine learning projects.
+Anaconda and Miniconda are Python distributions that include the Python interpreter along with a suite of other tools and libraries.
 
 Even if Python is already installed, you may prefer to use Anaconda/Miniconda.
 
@@ -537,7 +537,7 @@ $$
  te^{-t/\tau} - p\tau e^{-1} = 0
 $$
 
-This equation can be solved for t using a numerical root-finding algorithm (e.g. using an iterative method with an initialised variables as the starting value for the iteration):
+This equation can be solved for t using a numerical root-finding algorithm (e.g. using an iterative method with initialised variables as the starting values for the iteration):
 
 Solving for $p_1$ and $p_2$ gives $t_1$ and $t_2$
 
