@@ -9,7 +9,7 @@ vernon.clarke@northwestern.edu
 
 ## Instructions for setting up and running Jupyter Notebook
 
-**I am recommending the Anaconda/Miniconda method for running Jupyter Notebook**. 
+**I recommend the Anaconda/Miniconda method for running Jupyter Notebook**. 
 
 On my machine (iOS Sonoma, M2 pro), there is a massive speed advantage in running this code in the conda environment.
 The package versions seem the same so there is presumably a big difference in the underlying optimization. 
