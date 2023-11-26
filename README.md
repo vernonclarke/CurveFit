@@ -5,7 +5,7 @@
 
 These functions are designed to fit electrophysiological responses (either postsynaptic potentials or currents).
 
-vernon.clarke@northwestern.edu
+[Vernon Clarke](johnnythunders70@proton.me)
 
 ## Instructions for setting up and running Jupyter Notebook
 
