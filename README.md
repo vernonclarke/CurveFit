@@ -419,10 +419,8 @@ where $A_{peak}$ is the peak amplitude and f is as previously defined (see above
 Let p be the relative amplitudes of the response at some time t such that $p = y / A_{peak}$
 rearranging the equation:
 
-This equation can be written:
-
 $$
-y = A_{peak}f(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}}) 
+y = (\frac{A_{peak}}{f}(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}}) 
 $$
 
 gives:
