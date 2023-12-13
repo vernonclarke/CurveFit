@@ -420,7 +420,7 @@ Let p be the relative amplitudes of the response at some time t such that $p = y
 rearranging the equation:
 
 $$
-y = (\frac{A_{peak}}{f}(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}}) 
+y = \frac{A_{peak}}{f}(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}}) 
 $$
 
 gives:
