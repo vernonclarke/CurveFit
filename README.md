@@ -97,7 +97,7 @@ Python is usually pre-installed on Linux. If you need to install or update it, u
 
 5. **Install the required packages**
     ```bash
-    pip install jupyter numpy pandas matplotlib openpyxl plotly scipy tqdm ipywidgets
+    pip install jupyter numpy pandas matplotlib openpyxl plotly scipy tqdm ipywidgets numba
     ```
 
 6. **Quit terminal**
@@ -173,7 +173,7 @@ Run the downloaded installer and follow the instructions to set up your Python e
 
 5. **Install the required packages**
     ```bash
-    conda install -n fitting sqlite jupyter numpy pandas matplotlib openpyxl plotly scipy tqdm ipywidgets
+    conda install -n fitting sqlite jupyter numpy pandas matplotlib openpyxl plotly scipy tqdm ipywidgets numba
     ```
 
 6. **Quit Terminal**
