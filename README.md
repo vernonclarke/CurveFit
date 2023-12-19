@@ -5,8 +5,6 @@
 
 These functions are designed to fit electrophysiological responses (either postsynaptic potentials or currents).
 
-vernon.clarke@northwestern.edu
-
 ## Instructions for setting up and running Jupyter Notebook
 
 **I recommend the Anaconda/Miniconda method for running Jupyter Notebook**. 
