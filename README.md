@@ -5,6 +5,8 @@
 
 These functions are designed to fit electrophysiological responses (either postsynaptic potentials or currents).
 
+vernon.clarke@northwestern.edu
+
 ## Instructions for setting up and running Jupyter Notebook
 
 **I recommend the Anaconda/Miniconda method for running Jupyter Notebook**. 
@@ -97,7 +99,7 @@ Python is usually pre-installed on Linux. If you need to install or update it, u
 
 5. **Install the required packages**
     ```bash
-    pip install jupyter numpy pandas matplotlib openpyxl plotly scipy tqdm ipywidgets numba
+    pip install jupyter numpy pandas matplotlib openpyxl plotly scipy tqdm ipywidgets
     ```
 
 6. **Quit terminal**
@@ -173,7 +175,7 @@ Run the downloaded installer and follow the instructions to set up your Python e
 
 5. **Install the required packages**
     ```bash
-    conda install -n fitting sqlite jupyter numpy pandas matplotlib openpyxl plotly scipy tqdm ipywidgets numba
+    conda install -n fitting sqlite jupyter numpy pandas matplotlib openpyxl plotly scipy tqdm ipywidgets
     ```
 
 6. **Quit Terminal**
@@ -419,8 +421,10 @@ where $A_{peak}$ is the peak amplitude and f is as previously defined (see above
 Let p be the relative amplitudes of the response at some time t such that $p = y / A_{peak}$
 rearranging the equation:
 
+This equation can be written:
+
 $$
-y = \frac{A_{peak}}{f}(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}}) 
+y = A_{peak}f(e^{-t/\tau_{decay}} - e^{-t/\tau_{rise}}) 
 $$
 
 gives:
@@ -986,9 +990,3 @@ product_conversion_df(results[2])
 np.random.seed(7)
 FITproduct2_widget(x, y)
 ```
-
-
-If any bug fixes are necessary (most likely related to providing help on other operating systems), it will be provided as an update on the parent [`GitHub` page](https://github.com/vernonclarke/CurveFit).
-
-For queries related to this repository, please [open an issue](https://github.com/vernonclarke/CurveFit/issues) or [email](mailto:johnnythunders70@proton.me) directly 
-
