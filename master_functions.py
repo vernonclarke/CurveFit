@@ -2110,3 +2110,303 @@ def product_conversion_df(df, dp=3):
                       'peak2', '\u03C4rise2', '\u03C4decay2', 'tpeak2', 'area2', '\u03C3'] 
    
     return df_new
+
+
+def plot1(df1, method=0, model='product2', lwd=0.8, xrange=(0, 300), yrange=(0, 1000), 
+        width=600,height=600, pairing = True):
+    #     if method = 0 then plots tau else plots 80-20 decay
+    # Data for the scatter plots
+    if model == 'product2':
+        if method == 0:
+            x1 = df1.iloc[:, 2].values
+            x2 = df1.iloc[:, 9].values
+        else: 
+            x1 = df1.iloc[:, 5].values
+            x2 = df1.iloc[:, 12].values
+        y1 = df1.iloc[:, 0].values
+        y2 = df1.iloc[:, 7].values
+    else:
+        method=1
+        x1 = df1.iloc[:, 5].values
+        x2 = df1.iloc[:, 12].values
+        y1 = df1.iloc[:, 0].values
+        y2 = df1.iloc[:, 7].values
+
+
+    # Creating the figure
+    fig = go.Figure()
+
+    # Adding the scatter plots to the figure
+    fig.add_trace(go.Scatter(x=x1, y=y1, mode='markers', marker=dict(color='slateblue', size=lwd*8, opacity=0.6), name='fast'))
+    fig.add_trace(go.Scatter(x=x2, y=y2, mode='markers', marker=dict(color='indianred', size=lwd*8, opacity=0.6), name='slow'))
+
+    # Add dotted lines if pairing is enabled
+    if pairing:
+        for i in range(len(x1)):
+            fig.add_trace(go.Scatter(x=[x1[i], x2[i]], y=[y1[i], y2[i]],
+                                     mode='lines', line=dict(color='darkgray', width=lwd, dash='dot'),
+                                     showlegend=False))
+
+    if method == 0:
+        title = 'peak amplitude (pA) vs τdecay (ms)'
+        x_title = 'τdecay (ms)'
+    else:
+        title = 'peak amplitude (pA) vs decay time'
+        x_title = '80-20 decay (ms)'
+    
+    # Updating the layout
+    fig.update_layout(
+        title={
+            'text': title,
+            'y':0.9,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'
+        },
+        xaxis_title=x_title,
+        yaxis_title='peak amplitude (pA)',
+        xaxis=dict(
+            range=xrange,
+            showline=True,
+            showgrid=False,
+            linewidth=lwd, 
+            showticklabels=True,
+            linecolor='black',
+            ticks='outside',
+            tickfont=dict(
+                family='Calibri',
+                size=12,
+                color='black',
+            ),
+        ),
+        yaxis=dict(
+            range=yrange,
+            showline=True,
+            showgrid=False,
+            linewidth=lwd, 
+            showticklabels=True,
+            linecolor='black',
+            ticks='outside',
+            tickfont=dict(
+                family='Calibri',
+                size=12,
+                color='black',
+            ),
+        ),
+        plot_bgcolor='white',
+        # Set the size of the figure
+        width=width,  
+        height=width 
+    )
+
+    return fig
+
+# function to merge these results together
+
+def save_results(df, wd=None, folder='example data', filename='your_filename', out_name='summary', ext='xlsx'):
+    """
+    Save results in a DataFrame to a CSV or Excel file.
+    
+    :param df: DataFrame to save.
+    :param wd: Working directory, defaults to the current working directory.
+    :param folder: Directory where the file will be saved, defaults to 'example data'.
+    :param filename: Name of the file to save, without extension.
+    :param ext: Extension of the file, 'csv' for CSV file and 'xlsx' for Excel file. Defaults to 'xlsx'.
+    """
+    wd = wd or os.getcwd()
+    file_path = os.path.join(wd, folder, f"{filename}_{out_name}.{ext}")
+
+    # Ensure the folder exists
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+    # Check the file extension and save accordingly
+    if ext == 'csv':
+        df.to_csv(file_path, index=False, encoding='utf-8-sig')
+    elif ext == 'xlsx':
+        df.to_excel(file_path, index=False)
+    else:
+        raise ValueError("Unsupported file extension. Please use 'csv' or 'xlsx'.")
+
+def save_fig(fig, wd=None, folder='example data', filename='your_filename', out_name='fig', ext='svg'):
+    """
+    Save a plotly figure to a file.
+
+    Parameters:
+    fig (plotly.graph_objs.Figure): The plotly figure to save.
+    wd (str, optional): The working directory where the file will be saved. 
+                        Defaults to the current working directory.
+    folder (str, optional): The name of the folder within the working directory to save the file. 
+                            Defaults to 'example data'.
+    filename (str, optional): The base name of the file (without extension). 
+                              Defaults to 'your_filename'.
+    ext (str, optional): The file extension (type of file to save as). 
+                         Defaults to 'svg' for SVG file format.
+    """
+    # If wd is None, use the current working directory
+    wd = wd or os.getcwd()
+
+    # Add the extension to the filename
+    # This constructs the full filename including the chosen extension
+    filename_with_ext = f"{filename}_{out_name}.{ext}"
+
+    # Construct the full file path by combining the working directory, folder, and filename
+    file_path = os.path.join(wd, folder, filename_with_ext)
+
+    # Ensure the target folder exists, create it if it does not
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+    # Save the Plotly figure to the specified file path
+    fig.write_image(file_path)
+    
+def WBplot(data, wid=0.2, cap=0.05, xlab='', ylab='amplitude (pA)', xrange=(0.5, 2.5), yrange=(0, 300), lwd=0.8, 
+           amount=0.01, plot_width=400, plot_height=600):
+    
+    unique_x = data['x'].unique()
+    fig = go.Figure()
+
+    for i in unique_x:
+        d = data[data['x'] == i]['y']
+        q1 = np.percentile(d, 25, method='linear')
+        q3 = np.percentile(d, 75, method='linear')
+        iqr = q3 - q1
+        lower_bound = q1 - 1.5 * iqr
+        upper_bound = q3 + 1.5 * iqr
+
+        d_filtered = d[(d >= lower_bound) & (d <= upper_bound)]
+        median_val = np.median(d_filtered)
+        min_val = np.min(d_filtered)
+        max_val = np.max(d_filtered)
+
+        # Box
+        fig.add_shape(type="rect", x0=i - wid, y0=q1, x1=i + wid, y1=q3, line=dict(color="black", width=lwd))
+
+        # Median line
+        fig.add_trace(go.Scatter(x=[i - wid*1.1, i + wid*1.1], y=[median_val, median_val], mode='lines', line=dict(color='black', width=3*lwd)))
+
+        # Whiskers and caps
+        fig.add_trace(go.Scatter(x=[i, i], y=[q1, min_val], mode='lines', line=dict(color='black', width=lwd)))
+        fig.add_trace(go.Scatter(x=[i, i], y=[q3, max_val], mode='lines', line=dict(color='black', width=lwd)))
+        fig.add_trace(go.Scatter(x=[i - cap, i + cap], y=[min_val, min_val], mode='lines', line=dict(color='black', width=lwd)))
+        fig.add_trace(go.Scatter(x=[i - cap, i + cap], y=[max_val, max_val], mode='lines', line=dict(color='black', width=lwd)))
+
+    # Add jitter to x values
+    np.random.seed(42)
+    data['x_jitter'] = data['x'] + np.random.uniform(-amount, amount, size=data.shape[0])
+
+    # Colors for different x values
+    colors = {1: 'slateblue', 2: 'indianred'}
+
+    # Add individual data points with jitter
+    for i in unique_x:
+        subset_data = data[data['x'] == i]
+        fig.add_trace(go.Scatter(
+            x=subset_data['x_jitter'],
+            y=subset_data['y'],
+            mode='markers',
+            marker=dict(color=colors[i], size=lwd*8, opacity=0.6),  # Adjusted size and color
+            showlegend=False
+        ))
+
+    # Connect data points within subjects
+    subjects = data['s'].unique()
+    for subj in subjects:
+        subset_data = data[data['s'] == subj]
+        fig.add_trace(go.Scatter(
+            x=subset_data['x_jitter'],
+            y=subset_data['y'],
+            mode='lines',
+            line=dict(color='darkgray', width=lwd, dash='dot'),
+            showlegend=False
+        ))
+
+    # Determine the tick values within the xrange
+    tickvals = [x for x in range(int(np.ceil(xrange[0])), int(np.floor(xrange[1])) + 1)]
+
+    # Set layout, remove legend, set plot size, and customize axes
+    fig.update_layout(
+        xaxis=dict(
+            title=xlab,
+            range=xrange,
+            tickvals=tickvals,
+            showline=True,  
+            linewidth=lwd,  
+            linecolor='black',  
+            mirror=False,  
+            ticks='outside',  
+            tickfont=dict(
+                family='Calibri',
+                size=12,
+                color='black',
+            ),
+            showgrid=False  
+        ),
+        yaxis=dict(
+            title=ylab,
+            range=yrange,
+            showline=True,  
+            linewidth=lwd,  
+            linecolor='black',  
+            mirror=False,  
+            ticks='outside',
+            tickfont=dict(
+                family='Calibri',
+                size=12,
+                color='black',
+            ),
+            showgrid=False  
+        ),
+        showlegend=False,
+        width=plot_width,
+        height=plot_height,
+        plot_bgcolor='white' 
+    )
+
+    return fig
+
+def df_(df, name='peak'):
+    # Initialize lists for x, y, and subjects
+    x = []
+    y = []
+    subjects = []
+
+    # Initialize a counter for name='peak' columns
+    col_counter = 1
+
+    # Iterate over columns that start with name='peak'
+    for col_name in df.columns:
+        if col_name.lower().startswith(name):
+            for row_num, value in enumerate(df[col_name]):
+                x.append(col_counter)  # Use the counter for 'peak' columns
+                y.append(value)
+                subjects.append(row_num + 1)  # Assuming each row is a different subject
+            col_counter += 1  # Increment the counter for each 'peak' column
+
+    # Create the new DataFrame
+    data = pd.DataFrame({'s': subjects, 'x': x, 'y': y})
+    return data
+
+def example_plot(x, y, params_fit):
+
+    # Generate the fitted curves
+    y_fit = product2(params_fit[:-1], x)
+    y_fit1 = product(params_fit[0:3], x)
+    y_fit2 = product(params_fit[3:6], x)
+
+    # Create the figure
+    fig = go.Figure()
+
+    # Add the original data
+    fig.add_trace(go.Scatter(x=x, y=y, name='response', line=dict(color='lightgray')))
+
+    # Add the fitted curves
+    fig.add_trace(go.Scatter(x=x, y=y_fit, name='fit (sum)', line=dict(color='indianred', dash='dot')))
+    fig.add_trace(go.Scatter(x=x, y=y_fit1, name='fit1', line=dict(color='slateblue', dash='dot')))
+    fig.add_trace(go.Scatter(x=x, y=y_fit2, name='fit2', line=dict(color='slateblue', dash='dot')))
+
+    # Set the axis labels
+    fig.update_layout(
+        xaxis_title='ms',
+        yaxis_title='response',
+    )
+
+    return fig
